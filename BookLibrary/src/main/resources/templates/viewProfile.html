@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(106, 90, 205, 0.2);
+        }
+        .container {
+            width: 50%;
+            padding: 2rem;
+            background: rgba(106, 90, 205, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(106, 90, 205, 0.5);
+        }
+        .btn {
+            margin-top: 20px;
+            color: white;
+            background-color: rgba(106, 90, 205, 0.9);
+        }
+        .btn:hover {
+            background-color: rgba(106, 90, 205, 0.8);
+        }
+    </style>
+</head>
+<body>
+<div class="container"  th:object="${profile}">
+    <h2>Contact Information</h2>
+        <div>
+        <label for="FullName" class="form-label">Full Name</label>
+        <p>
+        <id="FullName" th:text="*{FullName}">
+        </p>
+        </div>
+        <div class="mb-3">
+        	<label for="age" class="form-label">Age</label>
+        	<p>
+        	<id="age" th:text="*{age}">
+        	</p>
+        </div>
+        <div >
+            <label for="address" class="form-label">Address</label>
+            <p>
+        	<id="address" th:text="*{address}">
+        	</p>
+        </div>
+        <div >
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <p>
+        	<id="phone_number" th:text="*{phone_number}">
+        	</p>
+        </div>
+    <a href="/user/requestsFromMe" class="btn btn-secondary">Return to Requests</a>
+</div>
+</body>
+</html>

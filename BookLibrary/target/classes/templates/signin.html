@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS (Updated to Bootstrap 5) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-0evHe/X+R8KK9g3J/1zmNV3fXBJLq2OUq+2Q64uRCyDX6MD4k5DFg8ejjECjizF6" crossorigin="anonymous">
+    <title>Login - Book(!=store)</title>
+    <!-- Custom CSS for better styling -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(106, 90, 205, 0.2);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container {
+            width: 400px;
+            padding: 2rem;
+            background: rgba(106, 90, 205, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(106, 90, 205, 0.5);
+            animation: fallDown 1s ease-out forwards;
+        }
+        @keyframes fallDown {
+            0% { transform: translateY(-500px); opacity: 0; }
+            90% { transform: translateY(30px); opacity: 1; }
+            100% { transform: translateY(0); }
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .btn {
+            height: 50px;
+            width: 150px;
+            margin: auto;
+            background-color: rgb(106, 90, 205);
+            border: 2px solid white;
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                        0 0 20px rgba(106, 90, 205, 0.75);
+            transition: all 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background-color: rgba(106, 90, 205, 0.8);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 
+                        0 0 25px rgba(106, 90, 205, 0.9);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+        label {
+            color: rgba(106, 90, 205, 0.9);
+        }
+        .form-control {
+            background-color: transparent;
+            border: 2px solid rgba(106, 90, 205, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+                        0 0 8px rgba(106, 90, 205, 0.6);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .form-control:focus {
+            border-color: rgba(106, 90, 205, 0.85);
+            box-shadow: 0 0 8px rgba(106, 90, 205, 0.75);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Animated login form with bookstore theme -->
+    <form th:action="@{/login}" method="POST">
+        <div class="text-center mb-4">
+            <h3>Welcome to Book(!=store)</h3>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" th:placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" th:placeholder="Password">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+        <div class="form-group">
+            <!-- Button to direct to registration page -->
+            <button type="button" onclick="window.location.href='/register'" class="btn btn-info">Register</button>
+        </div>
+        <div class="mt-3">
+            <div th:if="${param.error}" class="alert alert-danger">Username or Password is invalid.</div>
+            <div th:utext="${successMessage}" class="alert alert-success"></div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
