@@ -7,7 +7,7 @@ The system aims to promote book sharing and community engagement among readers.
 
 This project is a **team academic assignment** developed within the framework of university coursework.
 
-## 🚀 Features
+##  Features
 
 The **Social Bookstore Application** offers a wide range of features that enhance the user experience and promote book sharing among readers:
 
@@ -16,7 +16,7 @@ The **Social Bookstore Application** offers a wide range of features that enhanc
 - **Book Requests:** Users can search for available books by title, author, or category, send requests to other users, and receive personalized book recommendations based on their reading preferences.  
 - **Recommendation System:** The platform provides intelligent suggestions and matching between offers and requests, helping users discover new books and connect with others who share similar interests.
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 | Layer | Tools / Frameworks |
 |-------|---------------------|
@@ -26,7 +26,7 @@ The **Social Bookstore Application** offers a wide range of features that enhanc
 | **Build Tool** | Maven |
 | **Version Control** | Git & GitHub |
 
-## 🧩 Architecture
+##  Architecture
 The application follows a **3-tier architecture**:
 1. **Presentation Layer (Frontend):** HTML, CSS, Bootstrap for responsive UI.  
 2. **Business Layer (Backend):** Spring Boot controllers and services handling requests and logic.  
